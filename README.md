@@ -1,1 +1,3 @@
-Tic Tac Toe equivalent made in Python as a part of my cs game project.
+# Tic Tac Toe 
+
+tic tac toe equivalent made in Python as a part of my cs game project.
