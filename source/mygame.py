@@ -1,6 +1,7 @@
 #mygame.py
 import random
 import playsound
+from datetime import datetime
 
 #printf
 def printf(message, t=1, n=0, n2=0):
@@ -8,14 +9,16 @@ def printf(message, t=1, n=0, n2=0):
 
 def get_name(message):
     while True:
-        name = input(message).strip().lower()
-        if name in ["computer", "", "x", "o"]:
+        name = input(message).strip()
+        if len(name) < 3 or len(name) > 20:
+            printf("Name has to be between 3 and 20 characters long.")
+        elif name.isdigit():
+            printf("Name must include characters.")
+        elif name.lower() in ["computer", "computer1", "computer2", "", "x", "o", "draw","win","lose"]:
             printf("Invalid name.")
-        elif name.isdigit() or name.isspace():
-            printf("Invaid name.")
         else:
+            return name
             break
-    return name
 
 def get_num(message):
     while True:
@@ -29,7 +32,7 @@ def get_num(message):
 class Client:
     def __init__(self, name1, name2, mode):
         list1 = [name1, name2]
-        if name1 != "Computer":
+        if name1 != "computer":
             random.shuffle(list1)
             
         self.mode = mode
@@ -41,6 +44,9 @@ class Client:
         self.current = "X" #decides who plays first
         self.turn = self.players["X"] #name of person currently playing
         self.warning = False
+        self.moves = []
+        self.winner = ""
+        self.time = [datetime.now().timestamp()]
 
     def swap_turn(self):
         if self.current == "X":
@@ -73,8 +79,8 @@ class Client:
             if ch > 9 or ch <= 0:
                 printf("Invalid number. (1-9 only)")
                 playsound.playsound("audio/OutOfBound.mp3")
-
                 continue 
+
             elif self.grid[ch-1] != " ":
                 printf("Place already occupied.")
                 playsound.playsound("audio/OutOfBound.mp3")
@@ -82,7 +88,7 @@ class Client:
             else:
                 del self.grid[ch-1]
                 self.grid.insert(ch-1, self.current)
-                break
+                return ch-1
 
     def showwarning(self):
         for i in ["X","O"]:
@@ -224,15 +230,19 @@ class Client:
                 break
         else:
             if grid.count(" ") == 0:
-                result = "draw"
-                return result
+                self.winner = "draw"
+                self.time.append(datetime.now().timestamp())
+                return self.winner
             else:
                 won = False
         
         if won == True:
+            self.time.append(datetime.now().timestamp())
             if key == "X":
-                return self.players["X"]
+                self.winner = self.players["X"]
+                return self.winner
             else:
-                return self.players["O"]
+                self.winner = self.players["O"]
+                return self.winner
         else:
             return False

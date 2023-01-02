@@ -1,0 +1,62 @@
+{
+    "players": {
+        "computer": {
+            "created": 0,
+            "last played": "",
+            "games played": 0,
+            "wins/loss/draw": [
+                0,
+                0,
+                0
+            ],
+            "gameids": [],
+            "level": 1,
+            "xp": 0,
+            "password": ""
+        },
+        "computer1": {
+            "created": 0,
+            "last played": "",
+            "games played": 0,
+            "wins/loss/draw": [
+                0,
+                0,
+                0
+            ],
+            "gameids": [],
+            "level": 1,
+            "xp": 0,
+            "password": ""
+        },
+        "computer2": {
+            "created": 0,
+            "last played": "",
+            "games played": 0,
+            "wins/loss/draw": [
+                0,
+                0,
+                0
+            ],
+            "gameids": [],
+            "level": 1,
+            "xp": 0,
+            "password": ""
+        },
+        "Ankith": {
+            "created": 1672655863.394424,
+            "last played": 0,
+            "games played": 0,
+            "wins/loss/draw": [
+                0,
+                0,
+                0
+            ],
+            "gameids": [],
+            "level": 1,
+            "xp": 0,
+            "password": "hello1234567"
+        }
+    },
+    "games": {},
+    "totalgames": 0
+}
