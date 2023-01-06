@@ -4,6 +4,7 @@ from source.mygame import Client
 from source.mygame import printf, get_name, get_num
 from source.core import Core
 from source.data import SaveData
+import os
 import playsound
 
 DataClient = SaveData()
@@ -12,10 +13,14 @@ while True:
     if not mode: #if exit option was pressed
         break
     else:
+        printf("Player1:",n=1)
         name1 = DataClient.login(name1)
         if not name1:
             continue
-        name2 = DataClient.login(name2)
+
+        os.system("clear")
+        printf("Player2:",n=1)
+        name2 = DataClient.login(name2, name1)
         if not name2:
             continue
             

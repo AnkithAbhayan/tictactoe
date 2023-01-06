@@ -1,0 +1,9 @@
+{
+    "players": {
+        "Computer":{"created":0,"last played":"","games played":0,"wins/loss/draw":[0,0,0],"gameids":[],"level":1,"xp":0,"password":""},
+        "Computer1":{"created":0,"last played":"","games played":0,"wins/loss/draw":[0,0,0],"gameids":[],"level":1,"xp":0,"password":""},
+        "Computer2":{"created":0,"last played":"","games played":0,"wins/loss/draw":[0,0,0],"gameids":[],"level":1,"xp":0,"password":""}        
+    },
+    "games": {},
+    "totalgames": 0
+}

@@ -44,19 +44,78 @@
         },
         "Ankith": {
             "created": 1672655863.394424,
-            "last played": 0,
-            "games played": 0,
+            "last played": 1672939713.505711,
+            "games played": 2,
             "wins/loss/draw": [
-                0,
-                0,
+                1,
+                1,
                 0
             ],
-            "gameids": [],
+            "gameids": [
+                1,
+                2
+            ],
             "level": 1,
-            "xp": 0,
+            "xp": 211.11111111111111,
+            "password": "hello1234567"
+        },
+        "Karun": {
+            "created": 1672939469.995948,
+            "last played": 1672939713.505711,
+            "games played": 2,
+            "wins/loss/draw": [
+                1,
+                1,
+                0
+            ],
+            "gameids": [
+                1,
+                2
+            ],
+            "level": 1,
+            "xp": 155.55555555555554,
             "password": "hello1234567"
         }
     },
-    "games": {},
-    "totalgames": 0
+    "games": {
+        "1": {
+            "players": [
+                "Karun",
+                "Ankith"
+            ],
+            "winner": "Karun",
+            "time": [
+                1672939470.027169,
+                1672939487.793707
+            ],
+            "moves": [
+                0,
+                1,
+                3,
+                4,
+                6
+            ]
+        },
+        "2": {
+            "players": [
+                "Ankith",
+                "Karun"
+            ],
+            "winner": "Ankith",
+            "time": [
+                1672939704.542613,
+                1672939713.505711
+            ],
+            "moves": [
+                0,
+                1,
+                3,
+                2,
+                4,
+                5,
+                6
+            ]
+        }
+    },
+    "totalgames": 2
 }

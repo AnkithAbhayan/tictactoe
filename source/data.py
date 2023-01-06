@@ -82,11 +82,12 @@ class SaveData:
             return True
         return False
 
-    def login(self, name):
+    def login(self, name, sname=None):
         if name.isdigit():
             name = get_name("\tEnter your name:")
         elif name in ["Computer", "Computer1", "Computer2"]:
             return name
+
         while True:
             if not self.checkuser(name):
                 printf(f"Username {name} doesn't exist. (1. Create an account/2. Enter another account/3. Exit game)",n=1)
@@ -98,8 +99,11 @@ class SaveData:
                 elif ch == 3:
                     return False
                 else:
-                    printf("Enter either 1,2 or 3 only.")
+                    printf("Enter either 1,2 or 3 only.",n2=1)
             else:
+                if name == sname:
+                    printf("Account already chosen for player1. Choose another.",n2=1)
+                    self.login("2", sname)
                 break
 
         while True:
@@ -113,12 +117,12 @@ class SaveData:
                 if ch == 1:
                     continue
                 elif ch == 2:
-                    name = get_name("\tEnter your name:")
+                    name = get_name("\n\tEnter your name:")
                     self.checkuser(name)
                 elif ch == 3:
                     return False
                 else:
-                    printf("Enter either 1,2 or 3 only.")
+                    printf("Enter either 1,2 or 3 only.",n2=1)
         return name
 
 
