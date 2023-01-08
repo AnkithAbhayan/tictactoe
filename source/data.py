@@ -82,10 +82,13 @@ class SaveData:
             return True
         return False
 
+    def shell(self):
+        pass
+
     def login(self, name, sname=None):
         if name.isdigit():
             name = get_name("\tEnter your name:")
-        elif name in ["Computer", "Computer1", "Computer2"]:
+        elif name in ["computer", "computer1", "computer2"]:
             return name
 
         while True:
@@ -103,7 +106,7 @@ class SaveData:
             else:
                 if name == sname:
                     printf("Account already chosen for player1. Choose another.",n2=1)
-                    self.login("2", sname)
+                    return self.login("2", sname)
                 break
 
         while True:
@@ -123,6 +126,7 @@ class SaveData:
                     return False
                 else:
                     printf("Enter either 1,2 or 3 only.",n2=1)
+
         return name
 
 

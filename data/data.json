@@ -2,16 +2,18 @@
     "players": {
         "computer": {
             "created": 0,
-            "last played": "",
-            "games played": 0,
+            "last played": 1673210591.450377,
+            "games played": 1,
             "wins/loss/draw": [
-                0,
+                1,
                 0,
                 0
             ],
-            "gameids": [],
+            "gameids": [
+                3
+            ],
             "level": 1,
-            "xp": 0,
+            "xp": 225.0,
             "password": ""
         },
         "computer1": {
@@ -44,36 +46,60 @@
         },
         "Ankith": {
             "created": 1672655863.394424,
-            "last played": 1672939713.505711,
-            "games played": 2,
+            "last played": 1673211644.688905,
+            "games played": 8,
             "wins/loss/draw": [
-                1,
-                1,
+                4,
+                4,
                 0
             ],
             "gameids": [
                 1,
-                2
+                2,
+                3,
+                4,
+                5,
+                5,
+                6,
+                7
             ],
             "level": 1,
-            "xp": 211.11111111111111,
+            "xp": 802.7777777777776,
             "password": "hello1234567"
         },
         "Karun": {
             "created": 1672939469.995948,
-            "last played": 1672939713.505711,
-            "games played": 2,
+            "last played": 1673211644.688905,
+            "games played": 4,
             "wins/loss/draw": [
-                1,
+                3,
                 1,
                 0
             ],
             "gameids": [
                 1,
-                2
+                2,
+                6,
+                7
             ],
             "level": 1,
-            "xp": 155.55555555555554,
+            "xp": 555.5555555555555,
+            "password": "hello1234567"
+        },
+        "Ankith1": {
+            "created": 1673210730.76519,
+            "last played": 1673210753.929894,
+            "games played": 1,
+            "wins/loss/draw": [
+                0,
+                1,
+                0
+            ],
+            "gameids": [
+                4
+            ],
+            "level": 1,
+            "xp": 0,
             "password": "hello1234567"
         }
     },
@@ -115,7 +141,105 @@
                 5,
                 6
             ]
+        },
+        "3": {
+            "players": [
+                "computer",
+                "Ankith"
+            ],
+            "winner": "computer",
+            "time": [
+                1673210583.056225,
+                1673210591.450377
+            ],
+            "moves": [
+                6,
+                0,
+                8,
+                7,
+                2,
+                4,
+                5
+            ]
+        },
+        "4": {
+            "players": [
+                "Ankith",
+                "Ankith1"
+            ],
+            "winner": "Ankith",
+            "time": [
+                1673210745.81354,
+                1673210753.929894
+            ],
+            "moves": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ]
+        },
+        "5": {
+            "players": [
+                "Ankith",
+                "Ankith"
+            ],
+            "winner": "Ankith",
+            "time": [
+                1673210818.634147,
+                1673210830.156228
+            ],
+            "moves": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ]
+        },
+        "6": {
+            "players": [
+                "Karun",
+                "Ankith"
+            ],
+            "winner": "Karun",
+            "time": [
+                1673211584.596935,
+                1673211614.492452
+            ],
+            "moves": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ]
+        },
+        "7": {
+            "players": [
+                "Karun",
+                "Ankith"
+            ],
+            "winner": "Karun",
+            "time": [
+                1673211638.778364,
+                1673211644.688905
+            ],
+            "moves": [
+                0,
+                2,
+                4,
+                6,
+                8
+            ]
         }
     },
-    "totalgames": 2
+    "totalgames": 7
 }

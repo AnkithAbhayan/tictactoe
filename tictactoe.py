@@ -1,7 +1,7 @@
 #Tictactoe.py
 
 from source.mygame import Client 
-from source.mygame import printf, get_name, get_num
+from source.mygame import printf, get_name, get_num, clear
 from source.core import Core
 from source.data import SaveData
 import os
@@ -9,20 +9,22 @@ import playsound
 
 DataClient = SaveData()
 while True:
-    name1, name2, mode = Core.gamemenu() #returns names and game mode after running function
+    name1, name2, mode = Core.gamemenu(DataClient) #returns names and game mode after running function
     if not mode: #if exit option was pressed
         break
     else:
-        printf("Player1:",n=1)
         name1 = DataClient.login(name1)
         if not name1:
             continue
 
-        os.system("clear")
+        clear()
         printf("Player2:",n=1)
         name2 = DataClient.login(name2, name1)
         if not name2:
             continue
+
+        clear()
+        print("Starting the game...")
             
         while True:  #while true loop because the player can play again
             client = Client(name1, name2, mode)

@@ -2,10 +2,18 @@
 import random
 import playsound
 from datetime import datetime
+import os
 
 #printf
 def printf(message, t=1, n=0, n2=0):
     print("\n"*n,"\t"*t,message,"\n"*n2,sep="")
+
+def clear():
+    cmd = "clear"
+    if os.name == "nt":
+        cmd = "cls"
+    os.system(cmd)
+
 
 def get_name(message):
     while True:
@@ -24,7 +32,7 @@ def get_num(message):
     while True:
         ch = input(message).strip()
         if not ch.isdigit():
-            printf("Enter a valid number.")
+            printf("Enter a valid number.",n2=1)
             continue
         break
     return int(ch)

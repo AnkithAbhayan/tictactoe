@@ -2,7 +2,7 @@ from source.mygame import printf, get_num, get_name
 import playsound
 
 class Core:
-    def gamemenu():        
+    def gamemenu(DataClient):        
         printf(f"+{'-'*104}+", n=1)
         #print(pyfiglet.figlet_format("TIC TAC TOE", font="wavy"))ooga
         printf("OXOXXOXOXO  OX   OXOXOXO     OXOXOXOXOX   XOXOXXOXO    OXXOXOX     XOXOXOXOXO   XOOXOXOX   OXOXOXOXO")
@@ -19,7 +19,8 @@ class Core:
         printf("| 1. Play.           |", t=6)
         printf("| 2. Instructions.   |", t=6)
         printf("| 3. Credits.        |", t=6)
-        printf("| 4. Exit.           |", t=6)
+        printf("| 4. Data.           |", t=6)
+        printf("| 5. Exit.           |", t=6)
         printf(f"+{'-'*20}+",n2=2,t=6)
         #playsound.playsound("audio/genericnotify.mp3")
         while True: #determining name and mode
@@ -74,6 +75,8 @@ class Core:
             elif opt == 3:
                 printf("Built by Ankith Abhayan, 11C.")
             elif opt == 4:
+                DataClient.shell()
+            elif opt == 5:
                 printf("Exiting...")
                 return "", "", ""
             else:
