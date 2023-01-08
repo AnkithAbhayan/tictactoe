@@ -1,6 +1,6 @@
 import json
 from datetime import datetime
-from source.mygame import printf, get_num, get_name
+from source.mygame import printf, get_num, get_name, convert_time
 
 class SaveData:
     def __init__(self):
@@ -83,7 +83,102 @@ class SaveData:
         return False
 
     def shell(self):
-        pass
+        with open(self.path, "r") as JsonFile:
+            self.data = json.load(JsonFile)
+        def invalid():
+            if cmd[0] != "":
+                printf("\tInvalid command. Enter 'help' for more info or 'exit' to exit.",n2=1,n=1)
+
+        def playercmd():
+            if len(cmd)==1:
+                printf("\tNo player name entered.",n=1)
+                printf("\tformat: player/(playername)",n2=1)
+                return
+            name = cmd[1]
+            if not self.checkuser(name):
+                printf(f"\tPlayer '{name}' doesn't exist.",n=1,n2=1)
+                return
+            data = self.data["players"][name]
+            ttime = 0
+            for item in data["gameids"]:
+                ttime += (self.data["games"][str(item)]["time"][1]-self.data["games"][str(item)]["time"][0])
+            ttime = convert_time(round(ttime))
+
+            printf(f"\tShowing data for player '{name}':",n=2)
+            printf(f"\t+{'-'*35}")
+            printf(f"\t| Created:         {datetime.utcfromtimestamp(data['created']).strftime('%Y-%m-%d %H:%M:%S')}")
+            printf(f"\t| Last played:     {datetime.utcfromtimestamp(data['last played']).strftime('%Y-%m-%d %H:%M:%S')}")
+            printf(f"\t| Games played:    {data['games played']}")
+            printf(f"\t| Most recent IDs: {data['gameids'][-5:]}")
+            printf(f"\t| Time played:     {ttime}")
+            printf(f"\t| wins/loss/draw:  {data['wins/loss/draw']}")
+            printf(f"\t| total xp:        {round(data['xp'])}")
+            printf(f"\t| level:           {data['xp']//250}")
+            printf(f"\t+{'-'*35}",n2=2)
+
+
+        def gamecmd():
+            if len(cmd) == 1:
+                printf(f"No game ID entered. (enter between 1 - {self.data['totalgames']})",n=1)
+                printf("format: game/(gameid)",n2=1)
+                return
+
+            try:
+                gid = int(cmd[1])
+            except:
+                printf(f"Invalid number. (enter between 1 - {self.data['totalgames']})",n=1)
+                printf("format: game/(gameid)",n2=1)
+                return
+
+            if gid > self.data["totalgames"] or gid<1:
+                printf(f"Invalid number. (enter between 1 - {self.data['totalgames']})",n=1)
+                printf("format: game/(gameid)",n2=1)
+                return
+            gid = str(gid)
+
+            game = self.data["games"][gid]
+            printf(f"\tShowing data of Game no. #{gid}:",n=2)
+            printf(f"\t+{'-'*35}")
+            printf(f"\t| Players:    {game['players']}")
+            if game["winner"] not in game["players"]:
+                printf(f"\t| Result:     DRAW")
+            else:
+                printf(f"\t| Winner:     {game['winner']}")
+
+            ttime = round(game['time'][1]-game['time'][0])
+            ttime = convert_time(ttime)
+            printf(f"\t| Duration:   {ttime}")
+            printf(f"\t| Start time: {datetime.utcfromtimestamp(game['time'][0]).strftime('%Y-%m-%d %H:%M:%S')}")
+            printf(f"\t| End time:   {datetime.utcfromtimestamp(game['time'][1]).strftime('%Y-%m-%d %H:%M:%S')}")
+            printf(f"\t| Moves:      {game['moves']}")
+            printf(f"\t+{'-'*35}",n2=2)
+
+        def helpcmd():
+            printf("Help Message.")
+            printf("Commands:")
+            printf("   players/(playername)")
+            printf("   games/(gameid)")
+            printf("   help")
+            printf("   exit")
+
+        def exit():
+            printf("Returning to main menu...")
+            return "exit"
+
+        cmds = {
+            "player":playercmd,
+            "players":playercmd,
+            "game":gamecmd,
+            "games":gamecmd,
+            "help":helpcmd,
+            "exit":exit
+        }
+        printf("Entering Data Fetching mode, enter 'help' for more information.",n=1)
+        while True:
+            cmd = input("\t$tictactoe> ").split("/")
+            func = cmds.get(cmd[0], invalid)
+            if func() == "exit":
+                break
 
     def login(self, name, sname=None):
         if name.isdigit():

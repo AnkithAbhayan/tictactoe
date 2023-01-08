@@ -14,6 +14,20 @@ def clear():
         cmd = "cls"
     os.system(cmd)
 
+def convert_time(ttime):
+    ttime = round(ttime)
+    h = ttime//3600
+    m = ttime%3600//60
+    s = ttime%60
+
+    if h < 10:
+        h = f"0{h}"
+    if m < 10:
+        m = f"0{m}"
+    if s < 10:
+        s = f"0{s}"
+    return f"{h}:{m}:{s}"
+
 
 def get_name(message):
     while True:

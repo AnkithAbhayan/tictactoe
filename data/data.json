@@ -2,7 +2,42 @@
     "players": {
         "computer": {
             "created": 0,
-            "last played": 1673210591.450377,
+            "last played": 1673215490.489429,
+            "games played": 4,
+            "wins/loss/draw": [
+                4,
+                0,
+                0
+            ],
+            "gameids": [
+                3,
+                8,
+                9,
+                10
+            ],
+            "level": 1,
+            "xp": 1175.0,
+            "password": ""
+        },
+        "computer1": {
+            "created": 0,
+            "last played": 1673218064.684385,
+            "games played": 1,
+            "wins/loss/draw": [
+                0,
+                1,
+                0
+            ],
+            "gameids": [
+                11
+            ],
+            "level": 1,
+            "xp": 0,
+            "password": ""
+        },
+        "computer2": {
+            "created": 0,
+            "last played": 1673218064.684385,
             "games played": 1,
             "wins/loss/draw": [
                 1,
@@ -10,47 +45,19 @@
                 0
             ],
             "gameids": [
-                3
+                11
             ],
             "level": 1,
-            "xp": 225.0,
-            "password": ""
-        },
-        "computer1": {
-            "created": 0,
-            "last played": "",
-            "games played": 0,
-            "wins/loss/draw": [
-                0,
-                0,
-                0
-            ],
-            "gameids": [],
-            "level": 1,
-            "xp": 0,
-            "password": ""
-        },
-        "computer2": {
-            "created": 0,
-            "last played": "",
-            "games played": 0,
-            "wins/loss/draw": [
-                0,
-                0,
-                0
-            ],
-            "gameids": [],
-            "level": 1,
-            "xp": 0,
+            "xp": 350.0,
             "password": ""
         },
         "Ankith": {
             "created": 1672655863.394424,
-            "last played": 1673211644.688905,
-            "games played": 8,
+            "last played": 1673215490.489429,
+            "games played": 11,
             "wins/loss/draw": [
                 4,
-                4,
+                7,
                 0
             ],
             "gameids": [
@@ -61,7 +68,10 @@
                 5,
                 5,
                 6,
-                7
+                7,
+                8,
+                9,
+                10
             ],
             "level": 1,
             "xp": 802.7777777777776,
@@ -239,7 +249,81 @@
                 6,
                 8
             ]
+        },
+        "8": {
+            "players": [
+                "computer",
+                "Ankith"
+            ],
+            "winner": "computer",
+            "time": [
+                1673214987.500437,
+                1673214992.336844
+            ],
+            "moves": [
+                6,
+                0,
+                8,
+                1,
+                7
+            ]
+        },
+        "9": {
+            "players": [
+                "computer",
+                "Ankith"
+            ],
+            "winner": "computer",
+            "time": [
+                1673215377.5115,
+                1673215381.610863
+            ],
+            "moves": [
+                8,
+                0,
+                2,
+                1,
+                5
+            ]
+        },
+        "10": {
+            "players": [
+                "computer",
+                "Ankith"
+            ],
+            "winner": "computer",
+            "time": [
+                1673215485.078554,
+                1673215490.489429
+            ],
+            "moves": [
+                0,
+                1,
+                6,
+                2,
+                3
+            ]
+        },
+        "11": {
+            "players": [
+                "computer2",
+                "computer1"
+            ],
+            "winner": "computer2",
+            "time": [
+                1673218060.779531,
+                1673218064.684385
+            ],
+            "moves": [
+                6,
+                2,
+                8,
+                7,
+                0,
+                3,
+                4
+            ]
         }
     },
-    "totalgames": 7
+    "totalgames": 11
 }
